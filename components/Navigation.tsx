@@ -4,14 +4,17 @@ import React from "react";
 import { ChevronsLeft, MenuIcon } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
+import { useQuery } from "convex/react";
 
 import UserItem from "./UserItem";
 
 import { cn } from "@/lib/utils";
+import { api } from "@/convex/_generated/api";
 
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const documents = useQuery(api.documents.get);
 
   const isResizingRef = React.useRef<boolean>(false);
   const sidebarRef = React.useRef<React.ElementRef<"aside">>(null);
@@ -114,7 +117,9 @@ const Navigation = () => {
           <UserItem />
         </div>
         <div className="mt-4">
-          <p>Documents</p>
+          {documents?.map((document) => (
+            <p key={document._id}>{document.title}</p>
+          ))}
         </div>
         <div
           onMouseDown={(e) => handleMouseDown(e)}
