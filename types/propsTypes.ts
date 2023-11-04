@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 
-import { Id } from "@/convex/_generated/dataModel";
+import { Doc, Id } from "@/convex/_generated/dataModel";
 
 export interface ItemProps {
   id?: Id<"documents">;
@@ -13,4 +13,10 @@ export interface ItemProps {
   onClick: () => void;
   label: string;
   icon: LucideIcon;
+}
+
+export interface DocumentListProps {
+  parentDocumentId?: Id<"documents">;
+  level?: number;
+  data?: Doc<"documents">[];
 }
