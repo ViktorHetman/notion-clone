@@ -23,11 +23,13 @@ import TrashBox from "./TrashBox";
 
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
+import { useSearch } from "@/hooks/useSearch";
 
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
+  const search = useSearch((state) => state.onOpen);
 
   const isResizingRef = React.useRef<boolean>(false);
   const sidebarRef = React.useRef<React.ElementRef<"aside">>(null);
@@ -138,7 +140,12 @@ const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
+          <Item
+            label="Search"
+            icon={Search}
+            isSearch
+            onClick={() => search()}
+          />
           <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item
             onClick={() => handleCreate()}
