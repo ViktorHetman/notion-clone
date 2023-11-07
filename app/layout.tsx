@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ConvexClientProvider } from "@/components/providers/ConvexProvider";
 
 import "./globals.css";
+import ModalProvider from "@/components/providers/ModalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({
             storageKey="notion-clone-theme"
           >
             <Toaster position="bottom-center" />
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
