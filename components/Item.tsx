@@ -86,7 +86,7 @@ const Item = ({
   return (
     <div
       role="button"
-      onClick={() => onClick()}
+      onClick={onClick}
       style={{
         paddingLeft: level ? `${level * 12 + 12}px` : "12px",
       }}
