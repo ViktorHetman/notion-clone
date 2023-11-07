@@ -11,6 +11,7 @@ import { Input } from "./ui/input";
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
+import ConfirmModal from "./modals/ConfirmModal";
 
 const TrashBox = () => {
   const router = useRouter();
@@ -99,12 +100,14 @@ const TrashBox = () => {
               >
                 <Undo className="w-4 h-4 text-muted-foreground" />
               </div>
-              <div
-                role="button"
-                className="rounded-sm p-2 hover:bg-rose-600 dark:hover:bg-rose-300"
-              >
-                <Trash className="w-4 h-4 text-rose-500" />
-              </div>
+              <ConfirmModal onConfirm={() => onRemove(document._id)}>
+                <div
+                  role="button"
+                  className="rounded-sm p-2 hover:bg-rose-600 dark:hover:bg-rose-300"
+                >
+                  <Trash className="w-4 h-4 text-rose-500" />
+                </div>
+              </ConfirmModal>
             </div>
           </div>
         ))}

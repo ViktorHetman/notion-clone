@@ -20,3 +20,8 @@ export interface DocumentListProps {
   level?: number;
   data?: Doc<"documents">[];
 }
+
+export interface ConfirmModalProps {
+  children: React.ReactNode;
+  onConfirm: () => void;
+}
