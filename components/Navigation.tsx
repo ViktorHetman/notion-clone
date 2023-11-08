@@ -94,8 +94,11 @@ const Navigation = () => {
       setIsResseting(true);
 
       sidebarRef.current.style.width = isMobile ? "100%" : "240px";
-      navbarRef.current.style.setProperty("width", isMobile ? "0" : "240px");
-      navbarRef.current.style.setProperty("left", isMobile ? "94%" : "240px");
+      navbarRef.current.style.setProperty(
+        "width",
+        isMobile ? "0" : "calc(100% - 240px)"
+      );
+      navbarRef.current.style.setProperty("left", isMobile ? "100%" : "240px");
       setTimeout(() => setIsResseting(false), 300);
     }
   };
