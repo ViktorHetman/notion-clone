@@ -25,3 +25,12 @@ export interface ConfirmModalProps {
   children: React.ReactNode;
   onConfirm: () => void;
 }
+
+export interface NavbarMainProps {
+  isCollapsed: boolean;
+  onResetWidth: () => void;
+}
+
+export interface TitleProps {
+  initialData: Doc<"documents">;
+}
