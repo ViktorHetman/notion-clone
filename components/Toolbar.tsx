@@ -10,14 +10,15 @@ import { Button } from "./ui/button";
 
 import { ToolbarProps } from "@/types/propsTypes";
 import { api } from "@/convex/_generated/api";
+import { useCoverImage } from "@/hooks/useCoverImage";
 
 const Toolbar = ({ initialData, preview }: ToolbarProps) => {
   const inputRef = React.useRef<React.ElementRef<"textarea">>(null);
   const [isEditing, setIsEditing] = React.useState<boolean>(false);
   const [value, setValue] = React.useState<string>(initialData.title);
   const removeIcon = useMutation(api.documents.removeIcon);
-
   const update = useMutation(api.documents.update);
+  const coverImage = useCoverImage();
 
   const enableInput = () => {
     if (preview) return;
@@ -94,6 +95,7 @@ const Toolbar = ({ initialData, preview }: ToolbarProps) => {
             className="text-muted-foreground text-xs"
             variant="outline"
             size="sm"
+            onClick={coverImage.onOpen}
           >
             <ImageIcon className="h-4 w-4 mr-2" />
             Add Cover

@@ -51,3 +51,8 @@ export interface IconPickerProps {
   children: React.ReactNode;
   asChild?: boolean;
 }
+
+export interface CoverImageProps {
+  url: string;
+  preview?: boolean;
+}
