@@ -34,3 +34,20 @@ export interface NavbarMainProps {
 export interface TitleProps {
   initialData: Doc<"documents">;
 }
+
+export interface DocumentIdPageProps {
+  params: {
+    documentId: Id<"documents">;
+  };
+}
+
+export interface ToolbarProps {
+  initialData: Doc<"documents">;
+  preview?: boolean;
+}
+
+export interface IconPickerProps {
+  onChange: (icon: string) => void;
+  children: React.ReactNode;
+  asChild?: boolean;
+}

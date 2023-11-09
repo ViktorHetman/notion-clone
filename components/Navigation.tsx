@@ -38,7 +38,7 @@ const Navigation = () => {
   const isResizingRef = React.useRef<boolean>(false);
   const sidebarRef = React.useRef<React.ElementRef<"aside">>(null);
   const navbarRef = React.useRef<React.ElementRef<"div">>(null);
-  const [isResseting, setIsResseting] = React.useState<boolean>(false);
+  const [isReseting, setIsResseting] = React.useState<boolean>(false);
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(isMobile);
 
   React.useEffect(() => {
@@ -131,7 +131,7 @@ const Navigation = () => {
         ref={sidebarRef}
         className={cn(
           "group/sidebar h-full bg-secondary overflow-y-auto relative flex w-60 flex-col z-[99999]",
-          isResseting && "transition-all ease-in-out duration-300",
+          isReseting && "transition-all ease-in-out duration-300",
           isMobile && "w-0"
         )}
       >
@@ -178,15 +178,15 @@ const Navigation = () => {
         <div
           onMouseDown={(e) => handleMouseDown(e)}
           onClick={() => resetWidth()}
-          className="opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize
-        absolute h-full w-1 bg-primary/10 right-0 top-0"
+          className="opacity-0 group-hover/sidebar:opacity-100 transition 
+          cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"
         />
       </aside>
       <div
         ref={navbarRef}
         className={cn(
-          "absolute top-0 z-[99999] left-60 w-[calc(100%-240px)]",
-          isResseting && "transition-all ease-in-out duration-300",
+          "absolute top-0 z-[9999] left-60 w-[calc(100%-240px)]",
+          isReseting && "transition-all ease-in-out duration-300",
           isMobile && "left-0 w-full"
         )}
       >
