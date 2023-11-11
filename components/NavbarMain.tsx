@@ -33,7 +33,9 @@ const NavbarMain = ({ isCollapsed, onResetWidth }: NavbarMainProps) => {
     );
   }
 
-  if (document === null) null;
+  if (document === null) {
+    return null;
+  }
 
   return (
     <>

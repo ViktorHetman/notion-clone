@@ -7,7 +7,7 @@ const MarketingPage = () => {
     <section className="min-h-full flex flex-col">
       <div
         className="flex flex-col items-center justify-center
-      md:justify-start text-center gap-y-8 flex-1"
+      md:justify-start text-center flex-1"
       >
         <Heading />
         <Hero />

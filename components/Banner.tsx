@@ -17,15 +17,15 @@ const Banner = ({ documentId }: { documentId: Id<"documents"> }) => {
   const restore = useMutation(api.documents.restore);
 
   const onRemove = () => {
-    const promise = remove({ id: documentId }).then(() => {
-      router.push("/documents");
-    });
+    const promise = remove({ id: documentId });
 
     toast.promise(promise, {
       loading: "Deleting note...",
       success: "Note deleted!",
       error: "Failed to delete note.",
     });
+
+    router.push("/documents");
   };
 
   const onRestore = () => {

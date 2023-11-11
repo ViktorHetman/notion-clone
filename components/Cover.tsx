@@ -6,6 +6,7 @@ import { useMutation } from "convex/react";
 import { useParams } from "next/navigation";
 
 import { Button } from "./ui/button";
+import { Skeleton } from "./ui/skeleton";
 
 import { cn } from "@/lib/utils";
 import { CoverImageProps } from "@/types/propsTypes";
@@ -66,3 +67,7 @@ const Cover = ({ url, preview }: CoverImageProps) => {
 };
 
 export default Cover;
+
+Cover.Skelenton = function CoverSkeleton() {
+  return <Skeleton className="w-full h-[12vh]" />;
+};

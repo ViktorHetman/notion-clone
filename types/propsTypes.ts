@@ -56,3 +56,9 @@ export interface CoverImageProps {
   url: string;
   preview?: boolean;
 }
+
+export interface EditorProps {
+  onChange: (value: string) => void;
+  initialContent?: string;
+  editable?: boolean;
+}
