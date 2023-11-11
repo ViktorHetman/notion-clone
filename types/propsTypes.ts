@@ -62,3 +62,7 @@ export interface EditorProps {
   initialContent?: string;
   editable?: boolean;
 }
+
+export interface PublishProps {
+  initialData: Doc<"documents">;
+}
